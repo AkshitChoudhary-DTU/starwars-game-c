@@ -1,0 +1,412 @@
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+#include<stdlib.h>
+#include<graphics.h>
+
+void main()
+{
+ void result(int &result);
+ void intro();
+ void instructions();
+ void control();
+
+ int gd = DETECT, gm;
+ initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+
+ intro();
+ char bh;
+
+ star:
+ clrscr();
+
+ gotoxy(10,8); cout<<"########################################";
+ gotoxy(10,10);cout<<"# PLAY GAME        PRESS 'P'           #\n";
+ gotoxy(10,12);cout<<"# INSTRUCTIONS     PRESS 'I'           #\n";
+ gotoxy(10,14);cout<<"# CONTROLS         PRESS 'C'           #\n";
+ gotoxy(10,16);cout<<"# EXIT             PRESS 'E'           #\n";
+ gotoxy(10,18);cout<<"########################################";
+ gotoxy(10,22);cout<<"HINT : if you cannot kill all aliens then press any key to skip to the boss mode ";
+
+ bh=getch();
+ switch(bh)
+{
+ case 'p':goto playgame;
+ case 'i':instructions();goto star;
+ case 'e':exit(0);break;
+ case 'c':control();goto star;
+ default :exit(0);
+
+}
+
+ playgame :
+
+ clrscr();
+
+ gotoxy(5,5);cout<<"warrior your planet is under atttack ";delay(1000);
+ gotoxy(5,10);cout<<" save your planet "; delay(1000);
+ gotoxy(5,15);cout<<" press any key to show your space ship during battle";delay(1000);
+ gotoxy(5,20);cout<<" go !!!!!!!!!!!!! ";delay(1000);
+
+ clrscr();
+
+ char*d01={"##"};
+ char ch;
+ int score=0,i,a=20,b=20,z,life=2;
+ int l1=0,e1=0, l2=0,e2=0, l3=0,e3=0, l4=0,e4=0, l5=0,e5=0, l6=0,e6=0, l7=0,e7=0, l8=0,e8=0, l9=0,e9=0, l10=0,e10=0, l11=0,e11=0, l12=0,e12=0, l13=0,e13=0, l14=0,e14=0 , l15=0,e15=0  ;
+ int bux1=1,buy1=1,bux2=1,buy2=1, bux3=1,buy3=1, bux4=1,buy4=1, bux5=1,buy5=1, bux6=1,buy6=1, bux7=1,buy7=1, bux8=1,buy8=1, bux9=1,buy9=1, bux10=1,buy10=1, bux11=1,buy11=1, bux12=1,buy12=1, bux13=1,buy13=1, bux14=1,buy14=1, bux15=1,buy15=1;
+ int dd1=0,ddb1=0, dd2=0,ddb2=0, dd3=0,ddb3=0, dd4=0,ddb4=0, dd5=0,ddb5=0, dd6=0,ddb6=0, dd7=0,ddb7=0, dd8=0,ddb8=0 ,dd9=0,ddb9=0 ,dd10=0,ddb10=0 ,dd11=0,ddb11=0 ,dd12=0,ddb12=0 ,dd13=0,ddb13=0 ,dd14=0,ddb14=0 ,dd15=0,ddb15=0;
+ int x1=1 ,y1=1, x2=11,y2=1 ,x3=21,y3=1, x4=31,y4=1, x5=41,y5=1, x6=51,y6=1, x7=61,y7=1, x8=70,y8=1 ,x9=4,y9=2 ,x10=14,y10=2 ,x11=24,y11=2 ,x12=34,y12=2 ,x13=44,y13=2 ,x14=54,y14=2 ,x15=64,y15=2;
+ int c1=0,d1=1, c2=10,d2=1,  c3=20,d3=1, c4=30,d4=1, c5=40,d5=1, c6=50,d6=1, c7=60,d7=1, c8=69,d8=1 ,c9=3,d9=2 ,c10=13,d10=2 ,c11=23,d11=2 ,c12=33,d12=2 ,c13=43,d13=2 ,c14=53,d14=2 ,c15=63,d15=2;
+
+ gotoxy(20,20);cout<<"@";
+
+ for(i=0;i<500;i++)
+  {
+
+  gotoxy(20,24);cout<<"score "<<score;
+  gotoxy(20,23);cout<<"lives left "<<life;
+
+  if(ddb1==1){bux1=x1+1;gotoxy(bux1,buy1); cout<<"*"; if(bux1==a&&buy1==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}} delay(50); gotoxy(bux1,buy1++); cout<<" ";}
+  if(ddb2==1){bux2=x2+1;gotoxy(bux2,buy2); cout<<"*"; if(bux2==a&&buy2==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux2,buy2++); cout<<" ";}
+  if(ddb3==1){bux3=x3+1;gotoxy(bux3,buy3); cout<<"*"; if(bux3==a&&buy3==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux3,buy3++); cout<<" ";}
+  if(ddb4==1){bux4=x4+1;gotoxy(bux4,buy4); cout<<"*"; if(bux4==a&&buy4==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux4,buy4++); cout<<"  ";}
+  if(ddb5==1){bux5=x5+1;gotoxy(bux5,buy5); cout<<"*"; if(bux5==a&&buy5==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux5,buy5++); cout<<"  ";}
+  if(ddb6==1){bux6=x6+1;gotoxy(bux6,buy6); cout<<"*"; if(bux6==a&&buy6==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux6,buy6++); cout<<"  ";}
+  if(ddb7==1){bux7=x7+1;gotoxy(bux7,buy7); cout<<"*"; if(bux7==a&&buy7==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux7,buy7++); cout<<"  ";}
+  if(ddb8==1){bux8=x8+1;gotoxy(bux8,buy8); cout<<"*"; if(bux8==a&&buy8==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux8,buy8++); cout<<"  ";}
+  if(ddb9==1){bux9=x9+1;gotoxy(bux9,buy9); cout<<"*"; if(bux9==a&&buy9==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux9,buy9++); cout<<"  ";}
+  if(ddb10==1){bux10=x10+1;gotoxy(bux10,buy10); cout<<"*"; if(bux10==a&&buy10==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux10,buy10++); cout<<"  ";}
+  if(ddb11==1){bux11=x11+1;gotoxy(bux11,buy11); cout<<"*"; if(bux11==a&&buy11==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux11,buy11++); cout<<"  ";}
+  if(ddb12==1){bux12=x12+1;gotoxy(bux12,buy12); cout<<"*"; if(bux12==a&&buy12==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux12,buy12++); cout<<"  ";}
+  if(ddb13==1){bux13=x13+1;gotoxy(bux13,buy13); cout<<"*"; if(bux13==a&&buy13==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux13,buy13++); cout<<"  ";}
+  if(ddb14==1){bux14=x14+1;gotoxy(bux14,buy14); cout<<"*"; if(bux14==a&&buy14==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux14,buy14++); cout<<"  ";}
+  if(ddb15==1){bux15=x15+1;gotoxy(bux15,buy15); cout<<"*"; if(bux15==a&&buy15==b-1){life--;if(life==0){clrscr();cout<<"gameover";delay(1000);exit(0);}}delay(50); gotoxy(bux15,buy15++); cout<<"  ";}
+
+  if(i==l1+(20-y1)){ddb1=0;e1=1;}
+  if(i==l2+(20-y2)){ddb2=0;e2=1;}
+  if(i==l3+(20-y3)){ddb3=0;e3=1;}
+  if(i==l4+(20-y4)){ddb4=0;e4=1;}
+  if(i==l5+(20-y5)){ddb5=0;e5=1;}
+  if(i==l6+(20-y6)){ddb6=0;e6=1;}
+  if(i==l7+(20-y7)){ddb7=0;e7=1;}
+  if(i==l8+(20-y8)){ddb8=0;e8=1;}
+  if(i==l9+(20-y9)){ddb9=0;e9=1;}
+  if(i==l10+(20-y10)){ddb10=0;e10=1;}
+  if(i==l11+(20-y11)){ddb11=0;e11=1;}
+  if(i==l12+(20-y12)){ddb12=0;e12=1;}
+  if(i==l13+(20-y13)){ddb13=0;e13=1;}
+  if(i==l14+(20-y14)){ddb14=0;e14=1;}
+  if(i==l15+(20-y15)){ddb15=0;e15=1;}
+
+ de1:
+
+  if(dd1==1||ddb1==1){goto de2;  }
+  if(x1%10==0){ gotoxy(x1-1,y1);cout<<"   ";y1=y1+1; x1=1 ; c1=0; d1=d1+1;}
+  gotoxy(c1++,d1);cout<<"   ";delay(20);
+  gotoxy(x1++,y1);cout<<d01;delay(20);
+
+  de2:
+
+  if(dd2==1||ddb2==1){goto de3;  }
+  if(x2%20==0){ gotoxy(x2-1,y2);cout<<"   ";y2=y2+1; x2=11; c2=10; d2=d2+1;}
+  gotoxy(c2++,d2);cout<<"   ";delay(20);
+  gotoxy(x2++,y2);cout<<d01;delay(20);
+
+  de3:
+
+  if(dd3==1||ddb3==1 ){goto de4;  }
+  if(x3%30==0){ gotoxy(x3-1,y3);cout<<"   ";y3=y3+1; x3=21; c3=20; d3=d3+1;}
+  gotoxy(c3++,d3);cout<<"   ";delay(20);
+  gotoxy(x3++,y3);cout<<d01;delay(20);
+
+  de4:
+
+  if(dd4==1||ddb4==1 ){goto de5;  }
+  if(x4%40==0){ gotoxy(x4-1,y4);cout<<"   ";y4=y4+1; x4=31; c4=30; d4=d4+1;}
+  gotoxy(c4++,d4);cout<<"   ";delay(20);
+  gotoxy(x4++,y4);cout<<d01;delay(20);
+
+  de5:
+
+  if(dd5==1||ddb5==1 ){goto de6;  }
+  if(x5%50==0){ gotoxy(x5-1,y5);cout<<"   ";y5=y5+1; x5=41; c5=40; d5=d5+1;}
+  gotoxy(c5++,d5);cout<<"   ";delay(20);
+  gotoxy(x5++,y5);cout<<d01;delay(20);
+
+  de6:
+
+  if(dd6==1||ddb6==1 ){goto de7;  }
+  if(x6%60==0){ gotoxy(x6-1,y6);cout<<"   ";y6=y6+1; x6=51; c6=50; d6=d6+1;}
+  gotoxy(c6++,d6);cout<<"   ";delay(20);
+  gotoxy(x6++,y6);cout<<d01;delay(20);
+
+
+  de7:
+
+  if(dd7==1){goto de8;  }
+  if(x7%70==0){ gotoxy(x7-1,y7);cout<<"   ";y7=y7+1; x7=61; c7=60; d7=d7+1;}
+  gotoxy(c7++,d7);cout<<"   ";delay(20);
+  gotoxy(x7++,y7);cout<<d01;delay(20);
+
+  de8:
+
+  if(dd8==1){goto de9;  }
+  if(x8%79==0){ gotoxy(x8-1,y8);cout<<"   ";y8=y8+1; x8=70; c8=69; d8=d8+1;}
+  gotoxy(c8++,d8);cout<<"   ";delay(20);
+  gotoxy(x8++,y8);cout<<d01;delay(20);
+
+  de9:
+
+  if(dd9==1||ddb9==1){goto de10;  }
+  if(x9%10==0){ gotoxy(x9-1,y9);cout<<"   ";y9=y9+1; x9=4 ; c9=3; d9=d9+1;}
+  gotoxy(c9++,d9);cout<<"   ";delay(20);
+  gotoxy(x9++,y9);cout<<d01;delay(20);
+
+  de10:
+
+  if(dd10==1){goto de11;  }
+  if(x10%10==0){ gotoxy(x10-1,y10);cout<<"   ";y10=y10+1; x10=14 ; c10=13; d10=d10+1;}
+  gotoxy(c10++,d10);cout<<"   ";delay(20);
+  gotoxy(x10++,y10);cout<<d01;delay(20);
+
+  de11:
+
+  if(dd11==1){goto de12;  }
+  if(x11%10==0){ gotoxy(x11-1,y11);cout<<"   ";y11=y11+1; x11=24 ; c11=23; d11=d11+1;}
+  gotoxy(c11++,d11);cout<<"   ";delay(20);
+  gotoxy(x11++,y11);cout<<d01;delay(20);
+
+  de12:
+
+  if(dd12==1){goto de13;  }
+  if(x12%10==0){ gotoxy(x12-1,y12);cout<<"   ";y12=y12+1; x12=34 ; c12=33; d12=d12+1;}
+  gotoxy(c12++,d12);cout<<"   ";delay(20);
+  gotoxy(x12++,y12);cout<<d01;delay(20);
+
+  de13:
+
+  if(dd13==1){goto de14;  }
+  if(x13%10==0){ gotoxy(x13-1,y13);cout<<"   ";y13=y13+1; x13=44 ; c13=43; d13=d13+1;}
+  gotoxy(c13++,d13);cout<<"   ";delay(20);
+  gotoxy(x13++,y13);cout<<d01;delay(20);
+
+  de14:
+
+  if(dd14==1){goto de15;  }
+  if(x14%10==0){ gotoxy(x14-1,y14);cout<<"   ";y14=y14+1; x14=54 ; c14=53; d14=d14+1;}
+  gotoxy(c14++,d14);cout<<"   ";delay(20);
+  gotoxy(x14++,y14);cout<<d01;delay(20);
+
+  de15:
+
+  if(dd15==1){goto de16;  }
+  if(x15%10==0){ gotoxy(x15-1,y15);cout<<"   ";y15=y15+1; x15=64 ; c15=63; d15=d15+1;}
+
+  gotoxy(c15++,d15);cout<<"   ";delay(20);
+  gotoxy(x15++,y15);cout<<d01;delay(20);
+
+  de16:
+
+  while(kbhit())
+  {
+   ch=getch();
+   switch(ch)
+   {
+    case 'a':gotoxy(a,b);cout<<" ";gotoxy(--a,b);cout<<"@";break;
+    case 'd':gotoxy(a,b);cout<<" ";gotoxy(++a,b);cout<<"@";break;
+    case 'f':for(z=0;z<19;z++){gotoxy(a,19-z);cout<<"^";delay(20);
+	     if(a==x1&&19-z==y1){   score++;dd1=1; ddb1=1; l1=i; buy1=y1;  gotoxy(x1,y1);  cout<<"*#";delay(100);gotoxy(x1-2,y1);  cout<<"   ";break;}
+	     if(a==x2&&19-z==y2){   score++;dd2=1; ddb2=1; l2=i; buy2=y2;  gotoxy(x2,y2);  cout<<"*#";delay(100);gotoxy(x2-2,y2);  cout<<"   ";break;}
+	     if(a==x3&&19-z==y3){   score++;dd3=1; ddb3=1; l3=i; buy3=y3;  gotoxy(x3,y3);  cout<<"*#";delay(100);gotoxy(x3-2,y3);  cout<<"   ";break;}
+	     if(a==x4&&19-z==y4){   score++;dd4=1; ddb4=1; l4=i; buy4=y4;  gotoxy(x4,y4);  cout<<"*#";delay(100);gotoxy(x4-2,y4);  cout<<"   ";break;}
+	     if(a==x5&&19-z==y5){   score++;dd5=1; ddb5=1; l5=i; buy5=y5;  gotoxy(x5,y5);  cout<<"*#";delay(100);gotoxy(x5-2,y5);  cout<<"   ";break;}
+	     if(a==x6&&19-z==y6){   score++;dd6=1; ddb6=1; l6=i; buy6=y6;  gotoxy(x6,y6);  cout<<"*#";delay(100);gotoxy(x6-2,y6);  cout<<"   ";break;}
+	     if(a==x7&&19-z==y7){   score++;dd7=1; ddb7=1; l7=i; buy7=y7;  gotoxy(x7,y7);  cout<<"*#";delay(100);gotoxy(x7-2,y7);  cout<<"   ";break;}
+	     if(a==x8&&19-z==y8){   score++;dd8=1; ddb8=1; l8=i; buy8=y8;  gotoxy(x8,y8);  cout<<"*#";delay(100);gotoxy(x8-2,y8);  cout<<"   ";break;}
+	     if(a==x9&&19-z==y9){   score++;dd9=1; ddb9=1; l9=i; buy9=y9;  gotoxy(x9,y9);  cout<<"*#";delay(100);gotoxy(x9-2,y9);  cout<<"   ";break;}
+	     if(a==x10&&19-z==y10){score++;dd10=1;ddb10=1;l10=i;buy10=y10;gotoxy(x10,y10);cout<<"*#";delay(100);gotoxy(x10-2,y10);cout<<"   ";break;}
+	     if(a==x11&&19-z==y11){score++;dd11=1;ddb11=1;l11=i;buy11=y11;gotoxy(x11,y11);cout<<"*#";delay(100);gotoxy(x11-2,y11);cout<<"   ";break;}
+	     if(a==x12&&19-z==y12){score++;dd12=1;ddb12=1;l12=i;buy12=y12;gotoxy(x12,y12);cout<<"*#";delay(100);gotoxy(x12-2,y12);cout<<"   ";break;}
+	     if(a==x13&&19-z==y13){score++;dd13=1;ddb13=1;l13=i;buy13=y13;gotoxy(x13,y13);cout<<"*#";delay(100);gotoxy(x13-2,y13);cout<<"   ";break;}
+	     if(a==x14&&19-z==y14){score++;dd14=1;ddb14=1;l14=i;buy14=y14;gotoxy(x14,y14);cout<<"*#";delay(100);gotoxy(x14-2,y14);cout<<"   ";break;}
+	     if(a==x15&&19-z==y15){score++;dd15=1;ddb15=1;l15=i;buy15=y15;gotoxy(x15,y15);cout<<"*#";delay(100);gotoxy(x15-2,y15);cout<<"   ";break;}
+	     gotoxy(a,19-z);cout<<" ";delay(5);}
+	     break;
+    case 'g':for(z=0;z<19;z++){gotoxy(a,19-z);cout<<"|";delay(20);
+	     if(a==x1&&19-z==y1&&e1!=1){score++;dd1=1;ddb1=1;l1=i;buy1=y1;gotoxy(x1,y1);cout<<"*#";delay(100);gotoxy(x1-2,y1);cout<<"   ";break;}
+	     if(a==x2&&19-z==y2&&e2!=1){score++;dd2=1;ddb2=1;l2=i;buy2=y2;gotoxy(x2,y2);cout<<"*#";delay(100);gotoxy(x2-2,y2);cout<<"   ";break;}
+	     if(a==x3&&19-z==y3&&e3!=1){score++;dd3=1;ddb3=1;l3=i;buy3=y3;gotoxy(x3,y3);cout<<"*#";delay(100);gotoxy(x3-2,y3);cout<<"   ";break;}
+	     if(a==x4&&19-z==y4&&e4!=1){score++;dd4=1;ddb4=1;l4=i;buy4=y4;gotoxy(x4,y4);cout<<"*#";delay(100);gotoxy(x4-2,y4);cout<<"   ";break;}
+	     if(a==x5&&19-z==y5&&e5!=1){score++;dd5=1;ddb5=1;l5=i;buy5=y5;gotoxy(x5,y5);cout<<"*#";delay(100);gotoxy(x5-2,y5);cout<<"   ";break;}
+	     if(a==x6&&19-z==y6&&e6!=1){score++;dd6=1;ddb6=1;l6=i;buy6=y6;gotoxy(x6,y6);cout<<"*#";delay(100);gotoxy(x6-2,y6);cout<<"   ";break;}
+	     if(a==x7&&19-z==y7&&e7!=1){score++;dd7=1;ddb7=1;l7=i;buy7=y7;gotoxy(x7,y7);cout<<"*#";delay(100);gotoxy(x7-2,y7);cout<<"   ";break;}
+	     if(a==x8&&19-z==y8&&e8!=1){score++;dd8=1;ddb8=1;l8=i;buy8=y8;gotoxy(x8,y8);cout<<"*#";delay(100);gotoxy(x8-2,y8);cout<<"   ";break;}
+	     if(a==x9&&19-z==y9&&e9!=1){score++;dd9=1;ddb9=1;l9=i;buy9=y9;gotoxy(x9,y9);cout<<"*#";delay(100);gotoxy(x9-2,y9);cout<<"   ";break;}
+	     if(a==x10&&19-z==y10&&e10!=1){score++;dd10=1;ddb10=1;l10=i;buy10=y10;gotoxy(x10,y10);cout<<"*#";delay(100);gotoxy(x10-2,y10);cout<<"   ";break;}
+	     if(a==x11&&19-z==y11&&e11!=1){score++;dd11=1;ddb11=1;l11=i;buy11=y11;gotoxy(x11,y11);cout<<"*#";delay(100);gotoxy(x11-2,y11);cout<<"   ";break;}
+	     if(a==x12&&19-z==y12&&e12!=1){score++;dd12=1;ddb12=1;l12=i;buy12=y12;gotoxy(x12,y12);cout<<"*#";delay(100);gotoxy(x12-2,y12);cout<<"   ";break;}
+	     if(a==x13&&19-z==y13&&e13!=1){score++;dd13=1;ddb13=1;l13=i;buy13=y13;gotoxy(x13,y13);cout<<"*#";delay(100);gotoxy(x13-2,y13);cout<<"   ";break;}
+	     if(a==x14&&19-z==y14&&e14!=1){score++;dd14=1;ddb14=1;l14=i;buy14=y14;gotoxy(x14,y14);cout<<"*#";delay(100);gotoxy(x14-2,y14);cout<<"   ";break;}
+	     if(a==x15&&19-z==y15&&e15!=1){score++;dd15=1;ddb15=1;l15=i;buy15=y15;gotoxy(x15,y15);cout<<"*#";delay(100);gotoxy(x15-2,y15);cout<<"   ";break;}
+	     }
+	     for(z=0;z<19;z++){gotoxy(a,19-z);cout<<" ";delay(10);
+	     if(a==x1&&19-z==y1&&e1!=1){score++;dd1=1;ddb1=1;l1=i;buy1=y1;gotoxy(x1,y1);cout<<"*#";delay(100);gotoxy(x1-2,y1);cout<<"   ";break;}
+	     if(a==x2&&19-z==y2&&e2!=1){score++;dd2=1;ddb2=1;l2=i;buy2=y2;gotoxy(x2,y2);cout<<"*#";delay(100);gotoxy(x2-2,y2);cout<<"   ";break;}
+	     if(a==x3&&19-z==y3&&e3!=1){score++;dd3=1;ddb3=1;l3=i;buy3=y3;gotoxy(x3,y3);cout<<"*#";delay(100);gotoxy(x3-2,y3);cout<<"   ";break;}
+	     if(a==x4&&19-z==y4&&e4!=1){score++;dd4=1;ddb4=1;l4=i;buy4=y4;gotoxy(x4,y4);cout<<"*#";delay(100);gotoxy(x4-2,y4);cout<<"   ";break;}
+	     if(a==x5&&19-z==y5&&e5!=1){score++;dd5=1;ddb5=1;l5=i;buy5=y5;gotoxy(x5,y5);cout<<"*#";delay(100);gotoxy(x5-2,y5);cout<<"   ";break;}
+	     if(a==x6&&19-z==y6&&e6!=1){score++;dd6=1;ddb6=1;l6=i;buy6=y6;gotoxy(x6,y6);cout<<"*#";delay(100);gotoxy(x6-2,y6);cout<<"   ";break;}
+	     if(a==x7&&19-z==y7&&e7!=1){score++;dd7=1;ddb7=1;l7=i;buy7=y7;gotoxy(x7,y7);cout<<"*#";delay(100);gotoxy(x7-2,y7);cout<<"   ";break;}
+	     if(a==x8&&19-z==y8&&e8!=1){score++;dd8=1;ddb8=1;l8=i;buy8=y8;gotoxy(x8,y8);cout<<"*#";delay(100);gotoxy(x8-2,y8);cout<<"   ";break;}
+	     if(a==x9&&19-z==y9&&e9!=1){score++;dd9=1;ddb9=1;l9=i;buy9=y9;gotoxy(x9,y9);cout<<"*#";delay(100);gotoxy(x9-2,y9);cout<<"   ";break;}
+	     if(a==x10&&19-z==y10&&e10!=1){score++;dd10=1;ddb10=1;l10=i;buy10=y10;gotoxy(x10,y10);cout<<"*#";delay(100);gotoxy(x10-2,y10);cout<<"   ";break;}
+	     if(a==x11&&19-z==y11&&e11!=1){score++;dd11=1;ddb11=1;l11=i;buy11=y11;gotoxy(x11,y11);cout<<"*#";delay(100);gotoxy(x11-2,y11);cout<<"   ";break;}
+	     if(a==x12&&19-z==y12&&e12!=1){score++;dd12=1;ddb12=1;l12=i;buy12=y12;gotoxy(x12,y12);cout<<"*#";delay(100);gotoxy(x12-2,y12);cout<<"   ";break;}
+	     if(a==x13&&19-z==y13&&e13!=1){score++;dd13=1;ddb13=1;l13=i;buy13=y13;gotoxy(x13,y13);cout<<"*#";delay(100);gotoxy(x13-2,y13);cout<<"   ";break;}
+	     if(a==x14&&19-z==y14&&e14!=1){score++;dd14=1;ddb14=1;l14=i;buy14=y14;gotoxy(x14,y14);cout<<"*#";delay(100);gotoxy(x14-2,y14);cout<<"   ";break;}
+	     if(a==x15&&19-z==y15&&e15!=1){score++;dd15=1;ddb15=1;l15=i;buy15=y15;gotoxy(x15,y15);cout<<"*#";delay(100);gotoxy(x15-2,y15);cout<<"   ";break;}
+	     }break;
+    default :goto boss;
+   }
+  }
+ }
+
+ boss:
+
+ clrscr();
+
+ gotoxy(10,10);cout<<" boss mode";delay(1000);
+
+ clrscr();int l=8, j,scoreb=0;
+
+ int la,tx1,ty1=1;
+ int box1=1,boy1=1,box2=1,boy2=2,box3=1,boy3=3,box4=1,boy4=4,box5=1,boy5=5,box6=1,boy6=6;
+ int botx1=0,boty1=1,botx2=0,boty2=2,botx3=0,boty3=3,botx4=0,boty4=4,botx5=0,boty5=5,botx6=0,boty6=6;
+
+ gotoxy(20,20);cout<<"@";
+
+ for(i=0;i<500;i++)
+ {
+  gotoxy(20,23);cout<<"lives left "<<life;
+
+  if(box1%70==0){ gotoxy(box1-1,boy1); cout<<"      "; box1=1; boy1=boy1+1; botx1=0; boty1=boty1+1; } gotoxy(botx1++,boty1);cout<<" ";delay(20);  gotoxy(box1++,boy1);cout<<"#######";delay(20);
+  if(box2%70==0){ gotoxy(box2-1,boy2); cout<<"      "; box2=1; boy2=boy2+1; botx2=0; boty2=boty2+1; } gotoxy(botx2++,boty2);cout<<" ";delay(20);  gotoxy(box2++,boy2);cout<<"#     #";delay(20);
+  if(box3%70==0){ gotoxy(box3-1,boy3); cout<<"      "; box3=1; boy3=boy3+1; botx3=0; boty3=boty3+1; } gotoxy(botx3++,boty3);cout<<" ";delay(20);  gotoxy(box3++,boy3);cout<<"#   #";delay(20);
+  if(box4%70==0){ gotoxy(box4-1,boy4); cout<<"      "; box4=1; boy4=boy4+1; botx4=0; boty4=boty4+1; } gotoxy(botx4++,boty4);cout<<" ";delay(20);  gotoxy(box4++,boy4);cout<<"#     #";delay(20);
+  if(box5%70==0){ gotoxy(box5-1,boy5); cout<<"      "; box5=1; boy5=boy5+1; botx5=0; boty5=boty5+1; } gotoxy(botx5++,boty5);cout<<" ";delay(20);  gotoxy(box5++,boy5);cout<<"#     #";delay(20);
+  if(box6%70==0){ gotoxy(box6-1,boy6); cout<<"      "; box6=1; boy6=boy6+1; botx6=0; boty6=boty6+1; } gotoxy(botx6++,boty6);cout<<" ";delay(20);  gotoxy(box6++,boy6);cout<<"#######";delay(20);
+
+  if(i%l==0){ if(i%70==0){ l=l-2; } srand(time(0)); tx1=(rand()%70)+1; ty1=1;for(la=0;la<20;la++){ty1=ty1+1;gotoxy(tx1,ty1);cout<<"o";delay(10); if(tx1==a&&ty1==b){life --;if (life==0){goto go;}}}for(la=0;la<20;la++){ty1=ty1-1;gotoxy(tx1,ty1);cout<<" ";} }
+
+  while(kbhit())
+  {
+   ch=getch();
+   switch(ch)
+   {
+     case 'a':gotoxy(a,b);cout<<" ";gotoxy(--a,b);cout<<"@";break;
+     case 'd':gotoxy(a,b);cout<<" ";gotoxy(++a,b);cout<<"@";break;
+     case 'f':for(z=0;z<19;z++){gotoxy(a,19-z);cout<<"^";delay(20);if(a>=box6-1&&a<=box6+5&&19-z==boy6){scoreb++;if(scoreb>=20){cout<<" boss defeated ";delay(2000); goto go; } goto gn; }
+	      gotoxy(a,19-z);cout<<" ";delay(10);}
+	      break;
+     default :exit(0);
+   }
+  }
+  gn:
+ }
+
+ go:
+ clrscr();
+ score=score+scoreb;
+ result(score);
+ delay(1000);
+ getch();
+}
+
+void result(int &result)
+{
+
+cout<<"############################################"<<endl;delay(100);
+cout<<"#                                          #"<<endl;delay(100);
+cout<<"# Your score is: "<<result<<"                        #"<<endl;delay(100);
+cout<<"#                                          #"<<endl;delay(100);
+cout<<"# High score is: infinity                  #"<<endl;delay(100);
+cout<<"#                                          #"<<endl;delay(100);
+cout<<"#                                          #"<<endl;delay(100);
+cout<<"#                                          #"<<endl;delay(100);
+cout<<"#                                          #"<<endl;delay(100);
+cout<<"############################################"<<endl;delay(100);
+
+getch();
+
+}
+
+void intro()
+{
+
+ cleardevice();
+ settextstyle(0,0,3);
+ setbkcolor(4);
+ setcolor(3);
+ outtextxy(250,300,"Project by:");delay(1000);
+ outtextxy(250,350,"AKSHIT CHOUDHARY");delay(1000);
+ settextstyle(0,0,6);
+ setcolor(15);
+ outtextxy(100,100,"STAR WARS");delay(1000);
+ for(int i=0;i<450;i++){ setcolor(rand()); circle(50+i,50,20); circle(50,50+i,20); delay(5); }
+ getch();
+ closegraph();
+
+}
+
+void instructions()
+{
+
+clrscr();
+
+cout<<"############################################################"<<endl;
+cout<<"#                                                          #"<<endl;
+cout<<"#                    INSTRUCTIONS                          #"<<endl;
+cout<<"#                                                          #"<<endl;
+cout<<"# YOU NEED to destroy all aliens beore letting them reach  #"<<endl;
+cout<<"#  beyond you (NOTE : SOME ANIENS ARE IMMORTAL) after      #"<<endl;
+cout<<"#  destroying destroyable aliens you will face their boss  #"<<endl;
+cout<<"#   their boss can shoot lightning at random places and    #"<<endl;
+cout<<"#   when aliens die they fall down in form of bobs you will#"<<endl;
+cout<<"#  lose a life if you get hit by bomb or lightning you have#"<<endl;
+cout<<"#  only two lives so be careful                            #"<<endl;
+cout<<"#                 GOOD LUCK!!!!                            #"<<endl;
+cout<<"#                                                          #"<<endl;
+cout<<"############################################################"<<endl;
+
+getch();
+
+}
+
+void control()
+{
+clrscr();
+
+cout<<"#############################################\n";
+cout<<"#                                           #\n";
+cout<<"#  press 'a' to go left                     #\n";
+cout<<"#  press 'd' to go right                    #\n";
+cout<<"#  press 'f' to shoot bullet                #\n";
+cout<<"#  press 'g' to shoot lasers                #\n";
+cout<<"#                                           #\n";
+cout<<"#  laser kills deomons fully but can only be#\n";
+cout<<"#   used 3 times to kill deamons            #\n";
+cout<<"#  bullet kills deamons but leaves its soul #\n";
+cout<<"#  behind which is invisible but if hit     #\n";
+cout<<"#  again drops a bomb again                 #\n";
+cout<<"#                                           #\n";
+cout<<"#   lasers cannot be used against boss      #\n";
+cout<<"#   only bullet can kill him                #\n";
+cout<<"#                                           #\n";
+cout<<"#   some demons cannot be killed by lasers  #\n";
+cout<<"#                                           #\n";
+cout<<"#############################################\n";
+
+getch();
+
+}
